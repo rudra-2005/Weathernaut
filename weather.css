@@ -1,0 +1,166 @@
+body{overflow-x: hidden;
+    margin: 0;
+   
+
+}
+.d1{
+    background :url(C:\Users\RUDRA\Desktop\KAAM\react_jsx\src\assets\fh2.jpg) no-repeat center center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+
+   
+    
+  
+    text-align: center;
+
+}
+.d2{
+    margin-top: 50px;
+    text-align: left;
+    margin-left: 20px;
+    width: fit-content;
+    
+    
+}
+.h1{
+    text-align: center;
+    background-color: rgba(50, 46, 46, 0.416);
+    color: #ffffff;
+    
+    
+    margin-top:0;
+    margin-bottom: 5px;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+  
+}
+.i1{ 
+    border-radius: 5px;
+    border: transparent;
+    padding: .7rem 1.5rem;
+    background-color: rgba(50, 46, 46, 0.173);
+
+
+
+
+}
+.b1{
+    border-radius: 5px;
+    border: solid rgba(0, 0, 0, 0.221);
+    padding: .7rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.127);
+    margin-left: 10px;
+    color: #00000086;
+
+    
+    
+
+
+}
+button:hover {
+    background-color: rgba(255, 255, 255, 0.521);
+    transform: scale(1.1);
+}
+.p1{
+    
+
+
+}
+.p2{
+    font-size:4rem;
+    color: #181717ec;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+ 
+}
+.p3{
+    font-size: x-large;
+    background-color: rgba(255, 255, 255, 0.521);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    text-align: center;
+    
+    color: #00000086;
+    text-transform: capitalize;
+}
+.p4{
+    font-size: x-large;
+    background-color: rgba(255, 255, 255, 0.521);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #00000086;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    
+    
+
+    
+}
+.p5{
+    font-size: x-large;
+    background-color: rgba(255, 255, 255, 0.521);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #00000086;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+
+    
+}
+.p6{
+    font-size: x-large;
+    background-color: rgba(255, 255, 255, 0.521);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #00000086;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+
+    
+}
+.p7{
+    font-size: x-large;
+    background-color: rgba(255, 255, 255, 0.521);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #00000086;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+
+    
+}
+.p8{
+    font-size: x-large;
+    background-color: rgba(255, 255, 255, 0.521);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #00000086;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+
+    
+}
+.d3{
+    margin-top: 50px;
+    text-align: right;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 20px;
+  
+}
+.d4{
+    display: flex;
+}
+.p9{
+    color: #d6c5c5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
