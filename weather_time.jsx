@@ -14,7 +14,7 @@ const TimeandWeatherByLocation = () => {
 
     const fetchWeather = async (location) => {
         try {
-            const apiKey = "b52557174bd5f19de1d87f8158b29055"; 
+            const apiKey = "YOUR_API_KEY"; 
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
             const response = await axios.get(url);
 
@@ -42,7 +42,7 @@ const TimeandWeatherByLocation = () => {
 
     const fetchTime = async (location) => {
         try {
-            const opencageApiKey = "8c894691cfb549cbb5890fb53c81fc65";
+            const opencageApiKey = "YOUR_API_KEY";
             const opencageUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(location)}&key=${opencageApiKey}&language=en&pretty=1`;
 
             const opencageResponse = await axios.get(opencageUrl);
@@ -50,7 +50,7 @@ const TimeandWeatherByLocation = () => {
             if (opencageResponse.data.results.length > 0) {
                 const { lat, lng } = opencageResponse.data.results[0].geometry;
 
-                const timeZoneApiKey = "7P5OHXJNJCN6";
+                const timeZoneApiKey = "YOUR_API_KEY";
                 const timeZoneUrl = `http://api.timezonedb.com/v2.1/get-time-zone?key=${timeZoneApiKey}&format=json&by=position&lat=${lat}&lng=${lng}`;
 
                 const timeZoneResponse = await axios.get(timeZoneUrl);
