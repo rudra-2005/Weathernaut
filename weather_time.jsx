@@ -14,7 +14,7 @@ const TimeandWeatherByLocation = () => {
 
     const fetchWeather = async (location) => {
         try {
-            const apiKey = "YOUR_API_KEY"; 
+            const apiKey = "b52557174bd5f19de1d87f8158b29055"; 
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
             const response = await axios.get(url);
 
@@ -42,29 +42,23 @@ const TimeandWeatherByLocation = () => {
 
     const fetchTime = async (location) => {
         try {
-            const opencageApiKey = "YOUR_API_KEY";
-            const opencageUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(location)}&key=${opencageApiKey}&language=en&pretty=1`;
+            const nominatimUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(location)}&format=json&limit=1`;
+            const nominatimResponse = await axios.get(nominatimUrl);
 
-            const opencageResponse = await axios.get(opencageUrl);
-
-            if (opencageResponse.data.results.length > 0) {
-                const { lat, lng } = opencageResponse.data.results[0].geometry;
-
-                const timeZoneApiKey = "YOUR_API_KEY";
-                const timeZoneUrl = `http://api.timezonedb.com/v2.1/get-time-zone?key=${timeZoneApiKey}&format=json&by=position&lat=${lat}&lng=${lng}`;
-
-                const timeZoneResponse = await axios.get(timeZoneUrl);
-
-                if (timeZoneResponse.data.status === "OK") {
+            if (nominatimResponse.data.length > 0) {
+                const { lat, lon } = nominatimResponse.data[0];
                 
-                    const localTime = new Date(timeZoneResponse.data.formatted);
-                    
-                    setTime(localTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}));
-                   
+                const geoNamesUsername = "_r.udr.a_"; // Updated with your GeoNames username
+                const geoNamesUrl = `http://api.geonames.org/timezoneJSON?lat=${lat}&lng=${lon}&username=${geoNamesUsername}`;
+                const geoNamesResponse = await axios.get(geoNamesUrl);
+
+                if (geoNamesResponse.data.time) {
+                    const localTime = new Date(geoNamesResponse.data.time);
+                    setTime(localTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
                     setDate(localTime.toLocaleDateString());
                     setError("");
                 } else {
-                    setError("Invalid location for time zone data. Please try again.");
+                    setError("Failed to fetch time. Please try again.");
                     setTime("");
                     setDate("");
                 }
@@ -79,7 +73,6 @@ const TimeandWeatherByLocation = () => {
             setDate("");
         }
     };
-
 
     const handleSubmit = (event) => {
         event.preventDefault();
